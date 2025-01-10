@@ -1,0 +1,61 @@
+---
+title: "occupationsconvert"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{occupationsconvert}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(occupationsconvert)
+```
+## Introduction
+
+The `occupationsconvert` package provides tools to convert Census 2010 occupational codes into ISCO08 occupational codes using a pre-defined crosswalk dataset. This vignette demonstrates how to use the main function `census10_to_isco08` and explains its key features. 
+
+## Installation
+
+You can install the development version of `occupationsconvert` from GitHub:
+
+```{r}
+## Installation
+
+# Install devtools if not already installed
+install.packages("devtools")
+
+# Install occupationsconvert from GitHub
+devtools::install_github("trangu05/occupationsconvert")
+
+```
+### Quick example
+
+```{r}
+
+## Quick Start
+# Example data
+df <- data.frame(Census2010 = c(1020, 2025, 2550, 3655, 6940))
+
+# Convert using the main function
+result <- census10_to_isco08(df, "Census2010")
+print(result)
+
+```
+
+The function works by initially converting Census codes into SOC2010 codes, and then 
+use avaiable crosswalk from SOC2010 into ISCO08 from BLS to convert Census codes into ISCO08.
+
+Some Census 2010 codes can be mapped into multiple SOC2010 codes according to the BLS. For these codes,
+I create a one-to-one mapping using simliarities in titles. 
+
+Some SOC2010 codes can also be mapped into multiple ISCO08 codes. If the user specifies one_to_one argument to be FALSE, then all mappings will be kept. If the user sets it to be TRUE, title
+similarities will be used to choose only one appropriate ISCO08 code. Warnings will be raised. Users must be very careful when setting one_to_one = TRUE. 
+
+

@@ -1,0 +1,15 @@
+Package: occupationsconvert
+Title: Package for making crosswalks between occupational codes.
+Version: 0.0.0.9000
+Authors@R: 
+    person("Tra", "Nguyen", email = "nguyenhuongtra96@gmail.com", role = c("aut", "cre"))
+Description: This package converts one system of occupational codes into another. Currently, only capable of converting from Census 2010 occupational codes into ISCO08 occupational codes. Users must beware that as occupational code systems do not entirely align, users' discretion must be made. More conversion functions will be updated in the future. 
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
