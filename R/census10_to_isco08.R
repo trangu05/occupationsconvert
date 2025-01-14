@@ -7,6 +7,7 @@
 #' @param one_to_one Logical. If TRUE, selects the closest match by title.
 #' @return A data frame with the ISCO08 mappings.
 #' @export
+
 census10_to_isco08 <- function(data, census_col, one_to_one = FALSE) {
   # Required Libraries
   library(dplyr)

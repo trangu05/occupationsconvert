@@ -3,7 +3,7 @@ Title: Package for making crosswalks between occupational codes.
 Version: 0.0.0.9000
 Authors@R: 
     person("Tra", "Nguyen", email = "nguyenhuongtra96@gmail.com", role = c("aut", "cre"))
-Description: This package converts one system of occupational codes into another. Currently, only capable of converting from Census 2010 occupational codes into ISCO08 occupational codes. Users must beware that as occupational code systems do not entirely align, users' discretion must be made. More conversion functions will be updated in the future. 
+Description: This package converts occupational codes between different systems, currently supporting conversions from Census 2010 to ISCO08. Due to differences between code systems, users are advised to exercise discretion in interpretation. Additional conversion functions will be added in future updates.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
